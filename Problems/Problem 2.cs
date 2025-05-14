@@ -12,7 +12,7 @@ namespace ProblemSolving_CSharp
         // leap year : All years which are perfectly divisible by 4 are leap years except for end-of-century years. The end-of-century year must be divisible by 400 to be a leap year.
         static private bool IsLeapYear(int year)
         {
-            return year % 400 == 0 ? true : (year % 4 == 0 && year % 100 != 0 ? true : false);
+            return (year % 400 == 0) || (year % 4 ==0 && year % 100 != 0);
         }
 
 
