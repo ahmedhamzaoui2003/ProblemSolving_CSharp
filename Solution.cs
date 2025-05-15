@@ -115,5 +115,26 @@ namespace ProblemSolving_CSharp
         }
 
 
+
+        // Problem 6 : Get the day of week name of certain date (Gregorian Calendar): 
+        static private int GetDayOrder(int year, int month, int day)
+        {
+            int a, y, m, d;
+            a = (14 - month) / 12;
+            y = year - a;
+            m = month + (12 * a) - 2;
+            // the index of day in the week : (gregorian calendar)
+            d = (day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
+
+            return d;
+        }
+
+
+        static private string GetDayName(int dayOrder)
+        {
+            string[] DayNames = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+            return DayNames[dayOrder];
+        }
+
     }
 }
