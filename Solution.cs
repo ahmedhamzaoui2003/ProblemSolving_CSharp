@@ -74,19 +74,27 @@ namespace ProblemSolving_CSharp
 
 
         // problem 4 : Print the number of Days , Hours , Minutes and Seconds in a certain Month :
-        static private int Months(int month)
+        static private int NumberOfDaysInMonth1(int year ,int month)
         {
-            List<int> daysInMonth = new List<int> { int.MaxValue, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            return daysInMonth[month];
+            if (month < 1 || month > 12)
+                return 0;
+            if (month == 2)
+            {
+                return IsLeapYear(year) ? 29 : 28;
+            }
+            List<int> arr31Days = new List<int> { 1, 3, 5, 7, 8, 10, 12 };
+            for (short i = 1; i <= 7; i++)
+            {
+                if (arr31Days[i - 1] == month)
+                    return 31;
+            }
+            //if you reach here then its 30 days.
+            return 30;
         }
 
-        static private int NumberOfDaysInMonth(int year, int month)
-        {
-            return IsLeapYear(year) && (month == 2) ? 29 : Months(month);
-        }
         static private int NumberOfHoursInMonth(int year, int month)
         {
-            return NumberOfDaysInMonth(year, month) * 24;
+            return NumberOfDaysInMonth1(year, month) * 24;
         }
         static private int NumberOfMinutesInMonth(int year, int month)
         {
@@ -96,5 +104,16 @@ namespace ProblemSolving_CSharp
         {
             return NumberOfMinutesInMonth(year, month) * 60;
         }
+
+        // Problem 5 : check the number of days in month in 2 lines of code : 
+        
+        static private int NumberOfDaysInMonth(int year, int month)
+        {
+            List<int> daysInMonth = new List<int> { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            return IsLeapYear(year) && (month == 2) ? 29 : daysInMonth[month - 1];
+            //return month == 2 ? (IsLeapYear(year) ? 29 : 28) : daysInMonth[month-1];
+        }
+
+
     }
 }
