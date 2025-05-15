@@ -72,5 +72,29 @@ namespace ProblemSolving_CSharp
             return NumberOfMinutes(year) * 60;
         }
 
+
+        // problem 4 : Print the number of Days , Hours , Minutes and Seconds in a certain Month :
+        static private int Months(int month)
+        {
+            List<int> daysInMonth = new List<int> { int.MaxValue, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            return daysInMonth[month];
+        }
+
+        static private int NumberOfDaysInMonth(int year, int month)
+        {
+            return IsLeapYear(year) && (month == 2) ? 29 : Months(month);
+        }
+        static private int NumberOfHoursInMonth(int year, int month)
+        {
+            return NumberOfDaysInMonth(year, month) * 24;
+        }
+        static private int NumberOfMinutesInMonth(int year, int month)
+        {
+            return NumberOfHoursInMonth(year, month) * 60;
+        }
+        static private int NumberOfSecondsInMonth(int year, int month)
+        {
+            return NumberOfMinutesInMonth(year, month) * 60;
+        }
     }
 }
