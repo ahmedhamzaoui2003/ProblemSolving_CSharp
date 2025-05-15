@@ -136,5 +136,43 @@ namespace ProblemSolving_CSharp
             return DayNames[dayOrder];
         }
 
+        // Problem 7 : Print the calendar of a certain month in a certain year
+
+        static private string GetMonthDay(int month)
+        {
+            string[] Months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            return Months[month - 1];
+        }
+
+        static private void PrintCalendar(int year, int month)
+        {
+            Console.WriteLine($"\n  __________________{GetMonthDay(month)}___________________\n");
+            Console.WriteLine("  Sun   Mon   Tue   Wed   Thu   Fri   Sat\n");
+
+            int daysInMonth = NumberOfDaysInMonth(year, month);
+            int dayOrder = GetDayOrder(year, month, 1);
+            int counter = dayOrder;
+
+            int i;
+            for (i = 0; i < dayOrder; i++)
+            {
+                Console.Write("      ");
+            }
+            for (int j = 1; j <= daysInMonth; j++)
+            {
+                Console.Write($"  {j,3} ");// right align the number in 2 spaces
+
+                //if((i + dayOrder) % 7 == 0) // print new line after 7 days
+                if (++i % 7 == 0)
+                {
+                    Console.WriteLine();
+                }
+            }
+            Console.WriteLine($"\n  ________________________________________\n");
+
+        }
+
+
+
     }
 }
