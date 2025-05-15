@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ProblemSolving_CSharp
 {
     // in this file we will put the important methods of each problem :
-    internal class Solution
+    internal class SolutionLevel2
     {
 
         //Problem 1 : Convert Number to text in english using recursion
