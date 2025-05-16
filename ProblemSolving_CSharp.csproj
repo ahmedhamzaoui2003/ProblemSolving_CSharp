@@ -43,38 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Problems Level 1\P 20 %28Repeated Elements Count in Array%29.cs" />
-    <Compile Include="Problems Level 1\P1 %28Multiplication Table%29.cs" />
-    <Compile Include="Problems Level 1\P10 %28Palindrome Number%29.cs" />
-    <Compile Include="Problems Level 1\P11 %28Inverted Number Pattern%29.cs" />
-    <Compile Include="Problems Level 1\P12 %28Number Pattern%29.cs" />
-    <Compile Include="Problems Level 1\P13%28Inverted letter pattern %29.cs" />
-    <Compile Include="Problems Level 1\P14%28All Word From AAA to ZZZ%29.cs" />
-    <Compile Include="Problems Level 1\P15 %28Guess a 3-Letter Password%29.cs" />
-    <Compile Include="Problems Level 1\P16 %28Encrypt And Decrypt Text%29.cs" />
-    <Compile Include="Problems Level 1\P17 %28Random Number From 1 to 10%29.cs" />
-    <Compile Include="Problems Level 1\P18 %28 Random characters %29.cs" />
-    <Compile Include="Problems Level 1\P19 %28Generate Keys%29.cs" />
-    <Compile Include="Problems Level 1\P2 %28Print All Prime Numbers from 1 to N %29.cs" />
-    <Compile Include="Problems Level 1\P21 %28Fill Array With Random Number%29.cs" />
-    <Compile Include="Problems Level 1\P22 %28Max of Random Array%29.cs" />
-    <Compile Include="Problems Level 1\P22 %28Sum of Random Array%29.cs" />
-    <Compile Include="Problems Level 1\P24 %28Average of Random Array%29.cs" />
-    <Compile Include="Problems Level 1\P25 %28Copy only prime numbers in other array%29.cs" />
-    <Compile Include="Problems Level 1\P3 %28Perfect Number%29.cs" />
-    <Compile Include="Problems Level 1\P4 %28Print Number In Reversed Order%29.cs" />
-    <Compile Include="Problems Level 1\P5 %28Sum Of Digits%29.cs" />
-    <Compile Include="Problems Level 1\P6 %28Reverse Number %29.cs" />
-    <Compile Include="Problems Level 1\P7 %28Digit Frequency%29.cs" />
-    <Compile Include="Problems Level 1\P8 %28All Digits Frequency %29.cs" />
-    <Compile Include="Problems Level 1\P9 %28Print Digits in Order%29.cs" />
-    <Compile Include="Problems Level 2\Problem 7.cs" />
+    <Compile Include="Problems Level 2\Problem 8.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolutionLevel2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Problems Level 1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -172,6 +172,18 @@ namespace ProblemSolving_CSharp
 
         }
 
+        // Problem 8 : Print the calendar of a certain year
+        static private void PrintYearClendar(int year)
+        {
+            Console.WriteLine($"\n  ________________________________________\n");
+            Console.WriteLine($"               Calendar - {year}              ");
+            Console.WriteLine($"\n  ________________________________________\n");
+
+            for (int i = 1; i <= 12; i++)
+            {
+                PrintCalendar(year, i);
+            }
+        }
 
 
     }
