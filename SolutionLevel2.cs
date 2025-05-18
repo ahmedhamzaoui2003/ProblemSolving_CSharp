@@ -172,6 +172,8 @@ namespace ProblemSolving_CSharp
 
         }
 
+
+
         // Problem 8 : Print the calendar of a certain year
         static private void PrintYearClendar(int year)
         {
@@ -186,5 +188,21 @@ namespace ProblemSolving_CSharp
         }
 
 
+
+
+        // Problem 9 : Print the number of days from the beginning of the year
+        static private int NumberOfDays(int year, int month)
+        {
+            int[] arrDays = { 31, (IsLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            return arrDays[month - 1];
+        }
+        static private int DaysFromTheBeginningOfTheYear(int year, int month, int day)
+        {
+            // you can do a ternary operator in an array initalization as i did in the next line
+            int totalDays = 0;
+            for (int i = 1; i < month; i++)
+                totalDays += NumberOfDaysInMonth(year, i);
+            return totalDays + day;
+        }
     }
 }
