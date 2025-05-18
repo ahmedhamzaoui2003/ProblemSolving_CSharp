@@ -14,7 +14,7 @@ namespace ProblemSolving_CSharp
         {
             return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
         }
-
+        
         static private int NumberOfDays(int year, int month)
         {
             int[] arrDays = { 31, (IsLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -32,7 +32,16 @@ namespace ProblemSolving_CSharp
             return totalDays + day;
 
         }
+        static private int DaysFromTheBeginningOfTheYear(int year,int month, int day)
+        {
+            int TotalDays = 0;
+            for(int i =1; i< month; i++)
+            {
+                TotalDays += NumberOfDays(year,i);
+            }
+            return TotalDays + day;
 
+        }
         static void Main(string[] args)
         {
         
@@ -41,11 +50,15 @@ namespace ProblemSolving_CSharp
 
             Console.Write("Please enter a month ?");
             int month = Convert.ToInt32(Console.ReadLine());
-
+            
             Console.Write("Please enter a year ?");
             int year = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("please enter the month ?");
+            month= Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("please enter the year ?");
+            year = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine($"\nNumber of days from the beginning of the year is {DaysFromTheBeginningOfTheYear(year, month, day)} days.");
 
