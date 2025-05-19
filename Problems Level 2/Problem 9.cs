@@ -32,16 +32,7 @@ namespace ProblemSolving_CSharp
             return totalDays + day;
 
         }
-        static private int DaysFromTheBeginningOfTheYear(int year,int month, int day)
-        {
-            int TotalDays = 0;
-            for(int i =1; i< month; i++)
-            {
-                TotalDays += NumberOfDays(year,i);
-            }
-            return TotalDays + day;
-
-        }
+       
         static void Main(string[] args)
         {
         

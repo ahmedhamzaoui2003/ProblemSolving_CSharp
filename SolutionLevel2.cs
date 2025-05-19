@@ -204,5 +204,76 @@ namespace ProblemSolving_CSharp
                 totalDays += NumberOfDaysInMonth(year, i);
             return totalDays + day;
         }
+
+
+
+
+        // Problem 10 : Go back to a certain date from the number of days from the beginning of the year
+
+        private struct stDate
+        {
+            public int day;
+            public int month;
+            public int year;
+        }
+
+        static private stDate GoBackToDate(int totalDays, int year)
+        {
+            stDate date;
+            date.day = 0;
+            date.month = 0;
+            date.year = year;
+
+            int numberOfDays = 0;
+            for (int i = 1; i <= 12; i++)
+            {
+
+                if (totalDays - numberOfDays < NumberOfDays(year, i))
+                {
+                    date.day = totalDays - numberOfDays;
+                    date.month += 1;
+                    break;
+                }
+                else
+                {
+                    numberOfDays += NumberOfDays(year, i);
+                    date.month = i;
+                }
+
+            }
+            return date;
+
+        }
+
+        //other method (more optimized and faster)
+
+        static stDate GetDateFromDayOrderInYear(int DateOrderInYear, int year)
+        {
+            stDate date;
+            int RemaningDays = DateOrderInYear;
+            int MonthDays = 0;
+
+
+            date.year = year;
+            date.month = 1;
+
+            while (true)
+            {
+                MonthDays = NumberOfDays(year, date.month);
+                if (RemaningDays > MonthDays)
+                {
+                    RemaningDays -= MonthDays;
+                    date.month++;
+                }
+                else
+                {
+                    date.day = RemaningDays;
+                    break;
+                }
+            }
+            return date;
+        }
+
+
     }
 }
