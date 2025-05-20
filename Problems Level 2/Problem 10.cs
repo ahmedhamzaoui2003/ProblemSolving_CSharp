@@ -69,7 +69,7 @@ namespace ProblemSolving_CSharp
 
         //other method (more optimized and faster)
 
-        static stDate GetDateFromDayOrderInYear(int DateOrderInYear,int year)
+        static private stDate GetDateFromDayOrderInYear(int DateOrderInYear,int year)
         {
             stDate date;
             int RemaningDays = DateOrderInYear;

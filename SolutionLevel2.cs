@@ -206,8 +206,6 @@ namespace ProblemSolving_CSharp
         }
 
 
-
-
         // Problem 10 : Go back to a certain date from the number of days from the beginning of the year
 
         private struct stDate
@@ -274,6 +272,35 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+
+        // Problem 11 : Date after adding a certain number of days to a certain date :
+        static private int NumberOfDaysInYear(int year)
+        {
+            return IsLeapYear(year) ? 366 : 365;
+        }
+        static private stDate AddDaysToDate(int DaysToAdd, stDate date)
+        {
+
+            int DaysInYear = 0;
+            // this is the trick to get the number of days from the beginning of the year
+            int RemaningDays = DaysToAdd + DaysFromTheBeginningOfTheYear(date.year, date.month, date.day);
+
+            while (true)
+            {
+                DaysInYear = NumberOfDaysInYear(date.year);
+                if (RemaningDays >= DaysInYear)
+                {
+                    RemaningDays -= DaysInYear;
+                    date.year++;
+                }
+                else
+                {
+                    date = GetDateFromDayOrderInYear(RemaningDays, date.year);
+                    break;
+                }
+            }
+            return date;
+        }
 
     }
 }
