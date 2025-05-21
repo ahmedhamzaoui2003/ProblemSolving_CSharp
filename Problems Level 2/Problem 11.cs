@@ -92,6 +92,44 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // other method : 
+        
+        static private stDate AddDaysToDate2(int DayToAdd,stDate date)
+        {
+            int RemaningDays = DayToAdd + DaysFromTheBeginningOfTheYear(date.year, date.month, date.day);
+            date.month = 1;
+
+            int MonthDays = 0;
+            while (true)
+            {
+
+
+                MonthDays = NumberOfDaysInMonth(date.year, date.month);
+                if(RemaningDays > MonthDays)
+                {
+                    RemaningDays -= MonthDays;
+                    date.month++;
+
+                    // for the last month of the year :
+                    if (date.month > 12)
+                    {
+                        date.year++;
+                        date.month = 1;
+                    }
+                }
+                else
+                {
+                    date.day = RemaningDays;
+                    break;
+                }
+                
+
+
+            }
+            return date;
+        }
+        
+
 
         static void Main(string[] args)
         {
@@ -100,7 +138,7 @@ namespace ProblemSolving_CSharp
             date.month = 10;
             date.year = 2022;
             int DaysToAdd = 2500;
-            stDate newDate = AddDaysToDate(DaysToAdd, date);
+            stDate newDate = AddDaysToDate2(DaysToAdd, date);
             Console.WriteLine($"Current Date is : {date.day}/{date.month}/{date.year}");
             Console.WriteLine($"New Date after adding [{DaysToAdd}] days is : {newDate.day}/{newDate.month}/{newDate.year}");
         }
