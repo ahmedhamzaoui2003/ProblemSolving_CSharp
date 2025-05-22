@@ -109,9 +109,8 @@ namespace ProblemSolving_CSharp
         
         static private int NumberOfDaysInMonth(int year, int month)
         {
-            List<int> daysInMonth = new List<int> { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            return IsLeapYear(year) && (month == 2) ? 29 : daysInMonth[month - 1];
-            //return month == 2 ? (IsLeapYear(year) ? 29 : 28) : daysInMonth[month-1];
+            List<int> daysInMonth = new List<int> { 31, (IsLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            return daysInMonth[month - 1];
         }
 
 
@@ -315,6 +314,19 @@ namespace ProblemSolving_CSharp
         {
             //return date1.year == date2.year && date1.month == date2.month && date1.day == date2.day;
             return (date1.year == date2.year ? (date1.month == date2.month ? (date1.day == date2.day ? true : false) : false) : false);
+        }
+
+
+
+        // Problem 14 : Last Day , Last Month :
+        static private bool IsLastDayInMonth(stDate date)
+        {
+            return date.day == NumberOfDaysInMonth(date.year, date.month);
+        }
+
+        static private bool IsLastMonthInYear(stDate date)
+        {
+            return date.month == 12;
         }
 
     }
