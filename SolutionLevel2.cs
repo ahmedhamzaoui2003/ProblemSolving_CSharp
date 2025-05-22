@@ -310,5 +310,12 @@ namespace ProblemSolving_CSharp
         }
 
 
+        // Problem 13 : check if date1 is equal to date2 :
+        static private bool IsDate1EqualsDate2(stDate date1, stDate date2)
+        {
+            //return date1.year == date2.year && date1.month == date2.month && date1.day == date2.day;
+            return (date1.year == date2.year ? (date1.month == date2.month ? (date1.day == date2.day ? true : false) : false) : false);
+        }
+
     }
 }
