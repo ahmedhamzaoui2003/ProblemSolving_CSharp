@@ -102,8 +102,6 @@ namespace ProblemSolving_CSharp
             int MonthDays = 0;
             while (true)
             {
-
-
                 MonthDays = NumberOfDaysInMonth(date.year, date.month);
                 if(RemaningDays > MonthDays)
                 {
