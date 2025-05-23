@@ -329,5 +329,27 @@ namespace ProblemSolving_CSharp
             return date.month == 12;
         }
 
+        // Problem 15 : Increase date by one day :
+
+        static private stDate IncreaseDateByOneDay(stDate date)
+        {
+            if (IsLastDayInMonth(date))
+            {
+                date.day = 1;
+                if (IsLastMonthInYear(date))
+                {
+                    date.month = 1;
+                    date.year++;
+                }
+                else
+                    date.month++;
+            }
+            else
+                date.day++;
+
+            return date;
+
+        }
+
     }
 }
