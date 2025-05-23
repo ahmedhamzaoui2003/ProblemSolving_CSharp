@@ -359,7 +359,23 @@ namespace ProblemSolving_CSharp
                 date1 = IncreaseDateByOneDay(date1);
                 DiffInDays++;
             }
+        }
 
+
+        // Problem 17 : Your Age in days :
+        // Get the current date + using the previous method to get the age in days
+
+        static private stDate GetCurrentDate()
+        {
+            // Get the current date and time
+            DateTime now = DateTime.Now;
+
+            stDate date;
+            date.day = now.Day;
+            date.month = now.Month;
+            date.year = now.Year;
+
+            return date;
         }
 
     }

@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProblemSolving_CSharp
+namespace ProblemSolving_CSharp.Problems_Level_2
 {
-    internal class Problem_16
+    internal class Problem_17
     {
+
+
+
         private struct stDate
         {
             public int day;
@@ -57,12 +60,12 @@ namespace ProblemSolving_CSharp
             return (date1.year == date2.year ? (date1.month == date2.month ? (date1.day == date2.day ? true : false) : false) : false);
         }
 
-        static private int DifferenceBetweenTwoDates(stDate date1, stDate date2 , int IncludeEndDay = 0)
+        static private int DifferenceBetweenTwoDates(stDate date1, stDate date2, int IncludeEndDay = 0)
         {
             int DiffInDays = 0;
             while (true)
             {
-                if (IsDate1EqualsDate2(date1, date2)) 
+                if (IsDate1EqualsDate2(date1, date2))
                     return DiffInDays + IncludeEndDay;
 
                 date1 = IncreaseDateByOneDay(date1);
@@ -71,42 +74,40 @@ namespace ProblemSolving_CSharp
         }
 
 
-        static private bool IsDate1LessThanDate2(stDate date1, stDate date2)
-        {
-            return date1.year < date2.year ? true : (date1.year == date2.year ? date1.month < date2.month ? true : date1.month == date2.month ? (date1.day < date2.day ? true : false) : false : false);
-        }
-        // Other Method : 
-        static private int GetDifferenceInDays(stDate date1, stDate date2, bool IncludeEndDay = false)
-        {
-            int DiffInDays = 0;
-            while (IsDate1LessThanDate2(date1, date2))
-            {
-                date1 = IncreaseDateByOneDay(date1);
-                DiffInDays++;
-            }
+        // Get the current date : 
+        static private stDate GetCurrentDate(){
+            // Get the current date and time
+            DateTime now = DateTime.Now;
 
-            return IncludeEndDay ? DiffInDays + 1 : DiffInDays;
+            stDate date;
+            date.day = now.Day;
+            date.month = now.Month;
+            date.year = now.Year;
+
+            return date;
         }
-       
+
         static void Main(string[] args)
         {
-            stDate date1,date2;
-            date1.day = 1;
-            date1.month = 1;
-            date1.year = 2022;
-
+            stDate BirthDay, CurrentDate;
             
-            date2.day = 25;
-            date2.month = 3;
-            date2.year = 2022;
+            BirthDay.day = 2;
+            BirthDay.month = 11;
+            BirthDay.year = 2003;
 
-            Console.WriteLine($"Difference is : {GetDifferenceInDays(date1, date2)} Day(s).");
-            Console.WriteLine($"Difference (Including End Day) is : {GetDifferenceInDays(date1, date2, true)} Day(s).");
+            CurrentDate = GetCurrentDate();
 
-            
+            Console.WriteLine($"Your Birth Day is : {BirthDay.day}/{BirthDay.month}/{BirthDay.year}");
+            Console.WriteLine($"Current Date is : {CurrentDate.day}/{CurrentDate.month}/{CurrentDate.year}");
+            Console.WriteLine($"Your Age is : {DifferenceBetweenTwoDates(BirthDay, CurrentDate)} Day(s).");
+
+
 
 
         }
+
+
+
 
     }
 }
