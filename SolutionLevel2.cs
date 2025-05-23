@@ -55,13 +55,13 @@ namespace ProblemSolving_CSharp
 
 
         // Problem 3 : Print the number of Days , Hours , Minutes and Seconds in a certain Year :
-        static private int NumberOfDays(int year)
+        static private int NumberOfDaysInYear(int year)
         {
             return IsLeapYear(year) ? 366 : 365;
         }
         static private int NumberOfHours(int year)
         {
-            return NumberOfDays(year) * 24;
+            return NumberOfDaysInYear(year) * 24;
         }
         static private int NumberOfMinutes(int year)
         {
@@ -273,10 +273,6 @@ namespace ProblemSolving_CSharp
 
 
         // Problem 11 : Date after adding a certain number of days to a certain date :
-        static private int NumberOfDaysInYear(int year)
-        {
-            return IsLeapYear(year) ? 366 : 365;
-        }
         static private stDate AddDaysToDate(int DaysToAdd, stDate date)
         {
 
@@ -329,7 +325,7 @@ namespace ProblemSolving_CSharp
             return date.month == 12;
         }
 
-        // Problem 15 : Increase date by one day :
+        // Problem 15 : Increase date by one day 
 
         static private stDate IncreaseDateByOneDay(stDate date)
         {
@@ -348,6 +344,21 @@ namespace ProblemSolving_CSharp
                 date.day++;
 
             return date;
+
+        }
+
+        // Problem 16 : Difference between two dates in days
+        static private int DifferenceBetweenTwoDates(stDate date1, stDate date2, int IncludeEndDay = 0)
+        {
+            int DiffInDays = 0;
+            while (true)
+            {
+                if (IsDate1EqualsDate2(date1, date2))
+                    return DiffInDays + IncludeEndDay;
+
+                date1 = IncreaseDateByOneDay(date1);
+                DiffInDays++;
+            }
 
         }
 
