@@ -15,7 +15,7 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             public int year;
         }
 
-        static private bool IsDate1LessThanDate2(stDate date1 , stDate date2){
+        static private bool IsDate1BeforeThanDate2(stDate date1 , stDate date2){
             return date1.year < date2.year ? true : (date1.year == date2.year ? date1.month < date2.month ? true : date1.month == date2.month ? (date1.day < date2.day ? true : false) : false : false);
         }
 
@@ -31,7 +31,7 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             date2.month = 3;
             date2.year = 2022;
 
-            Console.WriteLine(IsDate1LessThanDate2(date1,date2) ? "Yes, Date1 is less than Date2" : "No, Date1 is greater than Date2");
+            Console.WriteLine(IsDate1BeforeThanDate2(date1,date2) ? "Yes, Date1 is less than Date2" : "No, Date1 is greater than Date2");
         }
 
 

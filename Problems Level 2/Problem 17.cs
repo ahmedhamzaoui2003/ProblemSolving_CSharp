@@ -75,7 +75,8 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
 
         // Get the current date : 
-        static private stDate GetCurrentDate(){
+        static private stDate GetCurrentDate()
+        {
             // Get the current date and time
             DateTime now = DateTime.Now;
 
@@ -90,7 +91,7 @@ namespace ProblemSolving_CSharp.Problems_Level_2
         static void Main(string[] args)
         {
             stDate BirthDay, CurrentDate;
-            
+
             BirthDay.day = 2;
             BirthDay.month = 11;
             BirthDay.year = 2003;

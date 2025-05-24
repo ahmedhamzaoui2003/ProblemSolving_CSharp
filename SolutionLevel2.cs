@@ -299,7 +299,7 @@ namespace ProblemSolving_CSharp
 
 
         // Problem 12 : check if date1 is less than date2 : 
-        static private bool IsDate1LessThanDate2(stDate date1, stDate date2)
+        static private bool IsDate1BeforeThanDate2(stDate date1, stDate date2)
         {
             return date1.year < date2.year ? true : (date1.year == date2.year ? date1.month < date2.month ? true : date1.month == date2.month ? (date1.day < date2.day ? true : false) : false : false);
         }
@@ -377,6 +377,35 @@ namespace ProblemSolving_CSharp
 
             return date;
         }
+
+
+        // Problem 18 : Diff Day (Negative Days)
+        static private void Swap(ref stDate date1, ref stDate date2)
+        {
+            stDate temp = date1;
+            date1 = date2;
+            date2 = temp;
+        }
+        static private int GetDifferenceInDays(stDate date1, stDate date2, bool IncludeEndDay = false)
+        {
+            int Days = 0;
+            short SwapFlagValue = 1;
+
+            if (!IsDate1BeforeThanDate2(date1, date2))
+            {
+                Swap(ref date1, ref date2);
+                SwapFlagValue = -1;
+            }
+
+            while (IsDate1BeforeThanDate2(date1, date2))
+            {
+                Days++;
+                date1 = IncreaseDateByOneDay(date1);
+            }
+            return IncludeEndDay ? Days * SwapFlagValue + 1 : Days * SwapFlagValue;
+
+        }
+
 
     }
 }
