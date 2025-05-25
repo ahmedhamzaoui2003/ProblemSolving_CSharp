@@ -406,6 +406,17 @@ namespace ProblemSolving_CSharp
 
         }
 
+        //Problem 19 : Increase date by X days
+
+        static private stDate IncreaseDateByXDays(stDate date, int xDays)
+        {
+            for (int i = 1; i <= xDays; i++)
+            {
+                date = IncreaseDateByOneDay(date);
+            }
+            return date;
+        }
+
 
     }
 }
