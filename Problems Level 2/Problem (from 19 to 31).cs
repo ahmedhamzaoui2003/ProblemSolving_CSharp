@@ -57,7 +57,7 @@ namespace ProblemSolving_CSharp
         }
 
 
-
+        // Increase Date methods :
         static private stDate IncreaseDateByXDays(stDate date , int xDays)
         {
             for (int i = 1; i <= xDays ; i++)
@@ -66,6 +66,12 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+        static private stDate IncreaseDateByOneWeek(stDate date)
+        {
+            return IncreaseDateByXDays(date, 7);
+        }
+
+
         static void Main(string[] args)
         {
 
@@ -74,9 +80,17 @@ namespace ProblemSolving_CSharp
             date.month = 12;
             date.year = 2022;
 
+           
+            Console.WriteLine("Date After :\n");
+            date = IncreaseDateByOneDay(date);
+            Console.WriteLine($"01- Adding one day is   : {date.day}/{date.month}/{date.year}");
+            
             date = IncreaseDateByXDays(date, 11);
-            Console.WriteLine("\nDate After :\n");
-            Console.WriteLine($"01- Adding one day is : {date.day}/{date.month}/{date.year}");
+            Console.WriteLine($"02- Adding 10 days is   : {date.day}/{date.month}/{date.year}");
+            
+            date = IncreaseDateByOneWeek(date);
+            Console.WriteLine($"03- Adding one week is  : {date.day}/{date.month}/{date.year}");
+            
 
         }
 
