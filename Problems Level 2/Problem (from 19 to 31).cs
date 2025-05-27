@@ -80,7 +80,24 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
-        
+        static private stDate IncreaseDateByOneMonth(stDate date)
+        {
+            if (IsLastMonthInYear(date))
+            {
+                date.month = 1;
+                date.year++;
+            }
+            else
+                date.month++;
+
+
+            // Adjust day if it exceeds the number of days in the new month
+            if (date.day > NumberOfDaysInMonth(date.year , date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
         static void Main(string[] args)
         {
 
@@ -103,6 +120,8 @@ namespace ProblemSolving_CSharp
             date = IncreaseDateByXWeeks(date,10);
             Console.WriteLine($"04- Adding 10 weeks is   : {date.day}/{date.month}/{date.year}");
 
+            date = IncreaseDateByOneMonth(date);
+            Console.WriteLine($"05- Adding one month is   : {date.day}/{date.month}/{date.year}");
 
 
         }
