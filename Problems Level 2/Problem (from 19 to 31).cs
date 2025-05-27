@@ -71,7 +71,16 @@ namespace ProblemSolving_CSharp
             return IncreaseDateByXDays(date, 7);
         }
 
+        static private stDate IncreaseDateByXWeeks(stDate date , int xWeeks)
+        {
+            for (int i = 1; i <= xWeeks; i++)
+            {
+                date = IncreaseDateByOneWeek(date);
+            }
+            return date;
+        }
 
+        
         static void Main(string[] args)
         {
 
@@ -83,14 +92,18 @@ namespace ProblemSolving_CSharp
            
             Console.WriteLine("Date After :\n");
             date = IncreaseDateByOneDay(date);
-            Console.WriteLine($"01- Adding one day is   : {date.day}/{date.month}/{date.year}");
+            Console.WriteLine($"01- Adding one day is    : {date.day}/{date.month}/{date.year}");
             
-            date = IncreaseDateByXDays(date, 11);
-            Console.WriteLine($"02- Adding 10 days is   : {date.day}/{date.month}/{date.year}");
+            date = IncreaseDateByXDays(date, 10);
+            Console.WriteLine($"02- Adding 10 days is    : {date.day}/{date.month}/{date.year}");
             
             date = IncreaseDateByOneWeek(date);
-            Console.WriteLine($"03- Adding one week is  : {date.day}/{date.month}/{date.year}");
+            Console.WriteLine($"03- Adding one week is   : {date.day}/{date.month}/{date.year}");
             
+            date = IncreaseDateByXWeeks(date,10);
+            Console.WriteLine($"04- Adding 10 weeks is   : {date.day}/{date.month}/{date.year}");
+
+
 
         }
 

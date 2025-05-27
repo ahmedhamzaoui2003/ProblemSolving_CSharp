@@ -421,5 +421,16 @@ namespace ProblemSolving_CSharp
         {
             return IncreaseDateByXDays(date, 7);
         }
+
+        //Problem 21 : Increase date by x weeks : 
+        static private stDate IncreaseDateByXWeeks(stDate date, int xWeeks)
+        {
+            for (int i = 1; i <= xWeeks; i++)
+            {
+                date = IncreaseDateByOneWeek(date);
+            }
+            return date;
+        }
+
     }
 }
