@@ -451,5 +451,16 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+
+        // Problem 23 : Increase date by x months :
+        static private stDate IncreaseDateByXMonths(stDate date, int xMonths)
+        {
+            for (int i = 1; i <= xMonths; i++)
+            {
+                date = IncreaseDateByOneMonth(date);
+            }
+            return date;
+        }
+
     }
 }

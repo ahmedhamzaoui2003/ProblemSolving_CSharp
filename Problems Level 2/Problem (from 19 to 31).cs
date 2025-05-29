@@ -70,7 +70,6 @@ namespace ProblemSolving_CSharp
         {
             return IncreaseDateByXDays(date, 7);
         }
-
         static private stDate IncreaseDateByXWeeks(stDate date , int xWeeks)
         {
             for (int i = 1; i <= xWeeks; i++)
@@ -79,7 +78,6 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
-
         static private stDate IncreaseDateByOneMonth(stDate date)
         {
             if (IsLastMonthInYear(date))
@@ -98,6 +96,15 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+        static private stDate IncreaseDateByXMonths(stDate date, int xMonths)
+        {
+            for (int i = 1; i <= xMonths; i++)
+            {
+                date = IncreaseDateByOneMonth(date);
+            }
+            return date;
+        }
+
         static void Main(string[] args)
         {
 
@@ -122,6 +129,11 @@ namespace ProblemSolving_CSharp
 
             date = IncreaseDateByOneMonth(date);
             Console.WriteLine($"05- Adding one month is   : {date.day}/{date.month}/{date.year}");
+
+            date = IncreaseDateByXMonths(date,5);
+            Console.WriteLine($"06- Adding 5 months is   : {date.day}/{date.month}/{date.year}");
+
+
 
 
         }
