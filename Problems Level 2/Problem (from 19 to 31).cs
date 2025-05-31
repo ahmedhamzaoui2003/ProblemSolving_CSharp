@@ -104,7 +104,16 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+        static private stDate IncreaseDateByOneYear(stDate date)
+        {
+            date.year++;
 
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
         static void Main(string[] args)
         {
 
@@ -129,9 +138,12 @@ namespace ProblemSolving_CSharp
 
             date = IncreaseDateByOneMonth(date);
             Console.WriteLine($"05- Adding one month is   : {date.day}/{date.month}/{date.year}");
-
+            
             date = IncreaseDateByXMonths(date,5);
             Console.WriteLine($"06- Adding 5 months is   : {date.day}/{date.month}/{date.year}");
+
+            date = IncreaseDateByOneYear(date);
+            Console.WriteLine($"07- Adding one year is   : {date.day}/{date.month}/{date.year}");
 
 
 
