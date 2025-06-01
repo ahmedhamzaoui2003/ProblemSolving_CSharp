@@ -485,5 +485,15 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 26 : Increase date by x years (faster method)
+        static private stDate IncreaseDateByXYearsFaster(stDate date, int xYears)
+        {
+            date.year += xYears;
+
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+
+            return date;
+        }
     }
 }

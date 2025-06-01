@@ -126,6 +126,16 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        static private stDate IncreaseDateByXYearsFaster(stDate date , int xYears)
+        {
+            date.year += xYears;
+
+            if(date.month==2 && date.day > NumberOfDaysInMonth(date.year,date.month))
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+
+            return date;
+        }
+
 
         static void Main(string[] args)
         {
@@ -160,6 +170,9 @@ namespace ProblemSolving_CSharp
 
             date = IncreaseDateByXYears(date, 10);
             Console.WriteLine($"08- Adding 10 Years is   : {date.day}/{date.month}/{date.year}");
+
+            date = IncreaseDateByXYearsFaster(date, 10);
+            Console.WriteLine($"09- Adding 10 Years (Faster) is   : {date.day}/{date.month}/{date.year}");
 
 
         }
