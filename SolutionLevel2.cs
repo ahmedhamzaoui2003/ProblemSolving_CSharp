@@ -474,5 +474,16 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 25 : Increase date by x years :
+        static private stDate IncreaseDateByXYears(stDate date, int xYears)
+        {
+            for (int i = 1; i <= xYears; i++)
+            {
+                date = IncreaseDateByOneYear(date);
+            }
+
+            return date;
+        }
+
     }
 }

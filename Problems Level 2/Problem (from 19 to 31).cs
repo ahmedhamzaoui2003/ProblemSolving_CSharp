@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,6 +115,18 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+
+        static private stDate IncreaseDateByXYears(stDate date,int xYears)
+        {
+            for(int i =1;i<=xYears; i++)
+            {
+                date = IncreaseDateByOneYear(date);
+            }
+
+            return date;
+        }
+
+
         static void Main(string[] args)
         {
 
@@ -145,7 +158,8 @@ namespace ProblemSolving_CSharp
             date = IncreaseDateByOneYear(date);
             Console.WriteLine($"07- Adding one year is   : {date.day}/{date.month}/{date.year}");
 
-
+            date = IncreaseDateByXYears(date, 10);
+            Console.WriteLine($"08- Adding 10 Years is   : {date.day}/{date.month}/{date.year}");
 
 
         }
