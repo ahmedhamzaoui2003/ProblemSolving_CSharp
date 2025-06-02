@@ -528,5 +528,16 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 30 : Increase date by one century (100 years) :
+        static private stDate IncreaseDateByOneCentury(stDate date)
+        {
+            date.year += 100;
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
+
     }
 }
