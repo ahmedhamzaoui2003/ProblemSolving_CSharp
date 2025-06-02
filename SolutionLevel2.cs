@@ -517,5 +517,16 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 29 : Increase date by X decades (faster method)
+        static private stDate IncreaseDateByXDecadesFaster(stDate date, int xDecades)
+        {
+            date.year += xDecades * 10;
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
+
     }
 }

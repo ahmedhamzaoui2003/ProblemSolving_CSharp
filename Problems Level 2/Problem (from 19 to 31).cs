@@ -154,6 +154,16 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+
+        static private stDate IncreaseDateByXDecadesFaster(stDate date, int xDecades)
+        {
+            date.year += xDecades * 10;
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
         static void Main(string[] args)
         {
 
@@ -196,6 +206,9 @@ namespace ProblemSolving_CSharp
 
             date = IncreaseDateByXDecades(date, 10);
             Console.WriteLine($"11- Adding 10 Decades is   : {date.day}/{date.month}/{date.year}");
+
+            date = IncreaseDateByXDecadesFaster(date, 10);
+            Console.WriteLine($"12- Adding 10 Decades (Faster) is   : {date.day}/{date.month}/{date.year}");
 
 
 
