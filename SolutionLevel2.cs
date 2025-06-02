@@ -507,6 +507,15 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 28 : Increase date by x decades (10 years) :
+        static private stDate IncreaseDateByXDecades(stDate date, int xDecades)
+        {
+            for (int i = 1; i <= xDecades; i++)
+            {
+                date = IncreaseDateByOneDecade(date);
+            }
+            return date;
+        }
 
     }
 }

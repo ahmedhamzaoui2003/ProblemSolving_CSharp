@@ -146,6 +146,14 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        static private stDate IncreaseDateByXDecades(stDate date, int xDecades)
+        {
+            for(int i = 1;i<=xDecades; i++)
+            {
+                date = IncreaseDateByOneDecade(date);
+            }
+            return date;
+        }
         static void Main(string[] args)
         {
 
@@ -185,6 +193,11 @@ namespace ProblemSolving_CSharp
 
             date = IncreaseDateByOneDecade(date);
             Console.WriteLine($"10- Adding one decade is : {date.day}/{date.month}/{date.year}");
+
+            date = IncreaseDateByXDecades(date, 10);
+            Console.WriteLine($"11- Adding 10 Decades is   : {date.day}/{date.month}/{date.year}");
+
+
 
         }
 
