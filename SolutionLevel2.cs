@@ -495,5 +495,18 @@ namespace ProblemSolving_CSharp
 
             return date;
         }
+
+        // Problem 27 : Increase date by one decade (10 years) :
+        static private stDate IncreaseDateByOneDecade(stDate date)
+        {
+            date.year += 10;
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
+
+
     }
 }

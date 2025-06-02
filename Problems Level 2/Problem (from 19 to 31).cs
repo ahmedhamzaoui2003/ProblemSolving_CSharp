@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -135,7 +136,15 @@ namespace ProblemSolving_CSharp
 
             return date;
         }
-
+        static private stDate IncreaseDateByOneDecade(stDate date)
+        {
+            date.year += 10;
+            if(date.month == 2 && date.day > NumberOfDaysInMonth(date.year , date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
 
         static void Main(string[] args)
         {
@@ -174,6 +183,8 @@ namespace ProblemSolving_CSharp
             date = IncreaseDateByXYearsFaster(date, 10);
             Console.WriteLine($"09- Adding 10 Years (Faster) is   : {date.day}/{date.month}/{date.year}");
 
+            date = IncreaseDateByOneDecade(date);
+            Console.WriteLine($"10- Adding one decade is : {date.day}/{date.month}/{date.year}");
 
         }
 
