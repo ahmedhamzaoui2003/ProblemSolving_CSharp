@@ -174,6 +174,19 @@ namespace ProblemSolving_CSharp
             }
             return date;
         }
+
+        static private stDate IncreaseDateByOneMillennium(stDate date)
+        {
+            date.year += 1000;
+            if(date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
+
+
+
         static void Main(string[] args)
         {
 
@@ -222,6 +235,9 @@ namespace ProblemSolving_CSharp
 
             date = IncreaseDateByOneCentury(date);
             Console.WriteLine($"13- Adding one century is : {date.day}/{date.month}/{date.year}");
+
+            date = IncreaseDateByOneMillennium(date);
+            Console.WriteLine($"13- Adding one Millennium is : {date.day}/{date.month}/{date.year}");
 
 
         }

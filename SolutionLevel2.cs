@@ -539,5 +539,16 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 31 : Increase date by one Millennium (1000 years) :
+        static private stDate IncreaseDateByOneMillennium(stDate date)
+        {
+            date.year += 1000;
+            if (date.month == 2 && date.day > NumberOfDaysInMonth(date.year, date.month))
+            {
+                date.day = NumberOfDaysInMonth(date.year, date.month);
+            }
+            return date;
+        }
+
     }
 }
