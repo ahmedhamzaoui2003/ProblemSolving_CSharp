@@ -550,5 +550,32 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 31 : Decrease date by one day
+        static private stDate DecreaseDateByOneDay(stDate date)
+        {
+            if (date.day == 1)
+            {
+                if (date.month == 1)
+                {
+                    date.year--;
+                    date.month = 12;
+                    date.day = 31;
+                }
+                else
+                {
+                    date.month--;
+                    date.day = NumberOfDaysInMonth(date.year, date.month);
+                }
+            }
+            else
+                date.day--;
+
+            return date;
+
+        }
+
+
+
+
     }
 }
