@@ -46,6 +46,14 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
         }
 
+        static private stDate DecreaseDateByXDays(stDate date, int xDays)
+        {
+            for(int i =1; i<= xDays; i++){
+                date = DecreaseDateByOneDay(date);
+            }
+            return date;
+        }
+
         private static void Main(string[] args)
         {
             stDate date;
@@ -55,8 +63,17 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
 
             Console.WriteLine("Date After :\n");
+            
             date = DecreaseDateByOneDay(date);
             Console.WriteLine($"01- Substracting one day is  : {date.day}/{date.month}/{date.year}");
+
+            date = DecreaseDateByXDays(date,10);
+            Console.WriteLine($"02- Substracting 10 day is  : {date.day}/{date.month}/{date.year}");
+
+
+
+
+
         }
 
     }

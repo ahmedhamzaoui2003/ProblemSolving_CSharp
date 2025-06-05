@@ -574,6 +574,17 @@ namespace ProblemSolving_CSharp
 
         }
 
+        // Problem 32 : Decrease date by X days
+        static private stDate DecreaseDateByXDays(stDate date, int xDays)
+        {
+            for (int i = 0; i < xDays; i++)
+            {
+                date = DecreaseDateByOneDay(date);
+            }
+            return date;
+        }
+
+
 
 
 
