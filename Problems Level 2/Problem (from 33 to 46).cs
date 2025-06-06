@@ -54,6 +54,16 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             return date;
         }
 
+        static private stDate DecreaseDateByOneWeek(stDate date)
+        {
+            for(int i = 1; i <= 7; i++)
+            {
+                date = DecreaseDateByOneDay(date);
+            }
+            return date;
+        }
+
+
         private static void Main(string[] args)
         {
             stDate date;
@@ -70,6 +80,8 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             date = DecreaseDateByXDays(date,10);
             Console.WriteLine($"02- Substracting 10 day is  : {date.day}/{date.month}/{date.year}");
 
+            date = DecreaseDateByOneWeek(date);
+            Console.WriteLine($"03- Substracting one week is  : {date.day}/{date.month}/{date.year}");
 
 
 

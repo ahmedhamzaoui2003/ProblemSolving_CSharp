@@ -584,7 +584,15 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
-
+        // Problem 33 : Decrease date by one week
+        static private stDate DecreaseDateByOneWeek(stDate date)
+        {
+            for (int i = 1; i <= 7; i++)
+            {
+                date = DecreaseDateByOneDay(date);
+            }
+            return date;
+        }
 
 
 
