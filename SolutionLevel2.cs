@@ -587,13 +587,19 @@ namespace ProblemSolving_CSharp
         // Problem 33 : Decrease date by one week
         static private stDate DecreaseDateByOneWeek(stDate date)
         {
-            for (int i = 1; i <= 7; i++)
+            return DecreaseDateByXDays(date, 7);
+        }
+
+        // Problem 34 : Decrease date by X weeks
+        static private stDate DecreaseDateByXWeeks(stDate date, int xWeeks)
+        {
+            /*return DecreaseDateByXDays(date, xWeeks * 7);*/
+            for (int i = 1; i <= xWeeks; i++)
             {
-                date = DecreaseDateByOneDay(date);
+                date = DecreaseDateByOneWeek(date);
             }
             return date;
         }
-
 
 
     }
