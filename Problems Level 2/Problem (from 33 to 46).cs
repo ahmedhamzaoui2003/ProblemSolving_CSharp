@@ -101,7 +101,14 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             return date;
         }
 
-
+        static private stDate DecreaseDateByXYears(stDate date, int xYears)
+        {
+            for(int i = 1; i<= xYears; i++)
+            {
+                date = DecreaseDateByOneYear(date);
+            }
+            return date;
+        }
 
 
 
@@ -136,6 +143,8 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             date = DecreaseDateByOneYear(date);
             Console.WriteLine($"07- Substracting one year is  : {date.day}/{date.month}/{date.year}");
 
+            date = DecreaseDateByXYears(date, 10);
+            Console.WriteLine($"08- Substracting 10 years is  : {date.day}/{date.month}/{date.year}");
 
 
 

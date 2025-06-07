@@ -636,6 +636,17 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        //Problem 38 : Decrease date by X years
+        static private stDate DecreaseDateByXYears(stDate date, int xYears)
+        {
+            for (int i = 1; i <= xYears; i++)
+            {
+                date = DecreaseDateByOneYear(date);
+            }
+            return date;
+        }
+
+
 
     }
 }
