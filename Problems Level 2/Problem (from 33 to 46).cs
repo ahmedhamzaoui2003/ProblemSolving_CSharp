@@ -110,7 +110,13 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             return date;
         }
 
+        static private stDate DecreaseDateByXYearsFaster(stDate date, int xYear)
+        {
+            date.year -= xYear;
 
+            date.day = Math.Min(date.day , NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
 
         private static void Main(string[] args)
         {
@@ -145,6 +151,9 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
             date = DecreaseDateByXYears(date, 10);
             Console.WriteLine($"08- Substracting 10 years is  : {date.day}/{date.month}/{date.year}");
+
+            date = DecreaseDateByXYearsFaster(date, 10);
+            Console.WriteLine($"08- Substracting 10 years (Faster) is  : {date.day}/{date.month}/{date.year}");
 
 
 

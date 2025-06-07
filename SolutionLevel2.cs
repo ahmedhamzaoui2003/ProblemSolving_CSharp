@@ -646,6 +646,15 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 39 : Decrease date by X years (faster method)
+
+        static private stDate DecreaseDateByXYearsFaster(stDate date, int xYear)
+        {
+            date.year -= xYear;
+
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
 
 
     }
