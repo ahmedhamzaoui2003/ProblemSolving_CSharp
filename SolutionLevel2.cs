@@ -656,6 +656,14 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 40 : Decrease date by one decade (10 years)
+        static private stDate DecreaseDateByOneDecade(stDate date)
+        {
+            date.year -= 10;
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+
+            return date;
+        }
 
     }
 }
