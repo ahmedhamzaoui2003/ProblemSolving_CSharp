@@ -601,6 +601,31 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        //Problem 35 : Decrease date by one month
+        static private stDate DecreaseDateByOneMonth(stDate date)
+        {
+            if (date.month == 1)
+            {
+                date.year--;
+                date.month = 12;
+            }
+            else
+                date.month--;
+
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+
+        }
+
+        //Problem 36 : Decrease date by X months
+        static private stDate DecreaseDateByXMonths(stDate date, int xMonths)
+        {
+            for (int i = 1; i <= xMonths; i++)
+            {
+                date = DecreaseDateByOneMonth(date);
+            }
+            return date;
+        }
 
     }
 }
