@@ -665,5 +665,15 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        //Problem 41 : Decrease date by X decades (10 years)
+        static private stDate DecreaseDateByXDecades(stDate date, int xDecades)
+        {
+            for (int i = 1; i <= xDecades; i++)
+            {
+                date = DecreaseDateByOneDecade(date);
+            }
+            return date;
+        }
+
     }
 }

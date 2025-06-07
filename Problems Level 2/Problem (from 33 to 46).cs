@@ -126,8 +126,17 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             return date;
         }
 
-        
-        
+        static private stDate DecreaseDateByXDecades(stDate date, int xDecades)
+        {
+            for (int i = 1; i <= xDecades; i++)
+            {
+                date = DecreaseDateByOneDecade(date);
+            }
+            return date;
+        }
+
+
+
 
 
         private static void Main(string[] args)
@@ -169,6 +178,9 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
             date = DecreaseDateByOneDecade(date);
             Console.WriteLine($"09- Substracting one decade is  : {date.day}/{date.month}/{date.year}");
+
+            date = DecreaseDateByXDecades(date, 10);
+            Console.WriteLine($"10- Substracting 10 Decades is  : {date.day}/{date.month}/{date.year}");
 
 
 
