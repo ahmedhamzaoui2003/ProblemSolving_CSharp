@@ -92,6 +92,18 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             }
             return date;
         }
+        
+        static private stDate DecreaseDateByOneYear(stDate date)
+        {
+            date.year--;
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            
+            return date;
+        }
+
+
+
+
 
         private static void Main(string[] args)
         {
@@ -120,6 +132,12 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
             date = DecreaseDateByXMonths(date, 5);
             Console.WriteLine($"06- Substracting 5 months is  : {date.day}/{date.month}/{date.year}");
+
+            date = DecreaseDateByOneYear(date);
+            Console.WriteLine($"07- Substracting one year is  : {date.day}/{date.month}/{date.year}");
+
+
+
 
 
         }

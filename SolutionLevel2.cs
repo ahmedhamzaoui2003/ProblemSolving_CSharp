@@ -627,5 +627,15 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 37 : Decrease date by one year
+        static private stDate DecreaseDateByOneYear(stDate date)
+        {
+            date.year--;
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+
+            return date;
+        }
+
+
     }
 }
