@@ -69,6 +69,20 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             return date;
         }
 
+        static private stDate DecreaseDateByOneMonth(stDate date)
+        {
+            if (date.month == 1)
+            {
+                date.year--;
+                date.month = 12;
+            }
+            else
+                date.month--;
+
+            date.day = NumberOfDaysInMonth(date.year, date.month);
+            return date;
+
+        }
 
         private static void Main(string[] args)
         {
@@ -79,11 +93,11 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
 
             Console.WriteLine("Date After :\n");
-            
+
             date = DecreaseDateByOneDay(date);
             Console.WriteLine($"01- Substracting one day is  : {date.day}/{date.month}/{date.year}");
 
-            date = DecreaseDateByXDays(date,10);
+            date = DecreaseDateByXDays(date, 10);
             Console.WriteLine($"02- Substracting 10 day is  : {date.day}/{date.month}/{date.year}");
 
             date = DecreaseDateByOneWeek(date);
@@ -92,6 +106,8 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             date = DecreaseDateByXWeeks(date, 10);
             Console.WriteLine($"04- Substracting 10 weeks is  : {date.day}/{date.month}/{date.year}");
 
+            date = DecreaseDateByOneMonth(date);
+            Console.WriteLine($"05- Substracting one month is  : {date.day}/{date.month}/{date.year}");
 
 
         }
