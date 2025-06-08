@@ -143,6 +143,16 @@ namespace ProblemSolving_CSharp.Problems_Level_2
             return date;
         }
 
+        static private stDate DecreaseDateByOneCentury(stDate date)
+        {
+            date.year -= 100;
+
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
+
+        
+
 
 
 
@@ -192,6 +202,9 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
             date = DecreaseDateByXDecadesFaster(date, 10);
             Console.WriteLine($"11- Substracting 10 decades (Faster) is  : {date.day}/{date.month}/{date.year}");
+
+            date = DecreaseDateByOneCentury(date);
+            Console.WriteLine($"12- Substracting one century is  : {date.day}/{date.month}/{date.year}");
 
 
 

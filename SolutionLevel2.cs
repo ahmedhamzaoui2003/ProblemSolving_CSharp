@@ -685,6 +685,13 @@ namespace ProblemSolving_CSharp
         }
 
         // Problem 43 : Decrease date by one century (100 years)
+        static private stDate DecreaseDateByOneCentury(stDate date)
+        {
+            date.year -= 100;
+
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
 
     }
 }
