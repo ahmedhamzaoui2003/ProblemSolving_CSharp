@@ -693,5 +693,13 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 44 : Decrease date by one millennium (1000 years)
+        static private stDate DecreaseDateByOneMillennium(stDate date)
+        {
+            date.year -= 1000;
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
+
     }
 }

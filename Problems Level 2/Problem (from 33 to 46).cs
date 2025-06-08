@@ -146,7 +146,13 @@ namespace ProblemSolving_CSharp.Problems_Level_2
         static private stDate DecreaseDateByOneCentury(stDate date)
         {
             date.year -= 100;
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
 
+        static private stDate DecreaseDateByOneMillennium(stDate date)
+        {
+            date.year -= 1000;
             date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
             return date;
         }
@@ -205,6 +211,9 @@ namespace ProblemSolving_CSharp.Problems_Level_2
 
             date = DecreaseDateByOneCentury(date);
             Console.WriteLine($"12- Substracting one century is  : {date.day}/{date.month}/{date.year}");
+
+            date = DecreaseDateByOneMillennium(date);
+            Console.WriteLine($"13- Substracting one milennium is  : {date.day}/{date.month}/{date.year}");
 
 
 
