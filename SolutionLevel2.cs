@@ -675,5 +675,16 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 42 : Decrease date by X decades (faster method)
+        static private stDate DecreaseDateByXDecadesFaster(stDate date, int xDecades)
+        {
+            date.year -= (10 * xDecades);
+
+            date.day = Math.Min(date.day, NumberOfDaysInMonth(date.year, date.month));
+            return date;
+        }
+
+        // Problem 43 : Decrease date by one century (100 years)
+
     }
 }
