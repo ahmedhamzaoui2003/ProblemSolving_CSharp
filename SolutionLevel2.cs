@@ -770,7 +770,17 @@ namespace ProblemSolving_CSharp
             return NumberOfVacationDays;
         }
 
-
+        // Problem 55 : Calculate The Vacation Date Return : 
+        static private stDate CalculateTheVacationEnd(stDate VacationDate, int VacationDays)
+        {
+            while (VacationDays >= 0)
+            {
+                VacationDate = IncreaseDateByOneDay(VacationDate);
+                if (IsBusinessDay(VacationDate))
+                    VacationDays--;
+            }
+            return VacationDate;
+        }
 
 
 
