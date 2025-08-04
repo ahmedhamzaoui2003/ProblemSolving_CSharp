@@ -782,6 +782,11 @@ namespace ProblemSolving_CSharp
             return VacationDate;
         }
 
+        // Problem 56 : is date1 after date2 : 
+        static private bool IsDate1AfterDate2(stDate date1, stDate date2)
+        {
+            return !IsDate1BeforeThanDate2(date1, date2) && !IsDate1EqualsDate2(date1, date2);
+        }
 
 
 
