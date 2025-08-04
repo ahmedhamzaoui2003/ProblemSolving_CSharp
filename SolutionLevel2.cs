@@ -701,5 +701,64 @@ namespace ProblemSolving_CSharp
             return date;
         }
 
+        // Problem 45 : Overload the DAyOfWeekOrder to take date structure : 
+        static private int GetDayOrder(stDate date)
+        {
+            return GetDayOrder(date.year, date.month, date.day);
+        }
+
+        // Problem 46 : Is End Of week ? 
+        static private bool IsEndOfWeek(stDate date)
+        {
+
+            return GetDayOrder(date) == 6;
+        }
+
+
+        // Problem 47 : Is Week End ? 
+        static private bool IsWeekEnd(stDate date)
+        {
+            return GetDayOrder(date) == 5 || GetDayOrder(date) == 6;
+        }
+
+
+        // Problem 48 : Is Business Day ? 
+        static private bool IsBusinessDay(stDate date)
+        {
+            return !IsWeekEnd(date);
+        }
+
+        // Problem 49 : Count the number of days until the end of the week
+        static private int DaysUntilTheEndOfWeek(stDate date)
+        {
+            return 6 - GetDayOrder(date);
+        }
+
+        // Problem 50 : Count the number of days until the end of the month
+        static private int DaysUntilTheEndOfMonth(stDate date)
+        {
+            stDate date2;
+            date2.year = date.year;
+            date2.month = date.month;
+            date2.day = NumberOfDaysInMonth(date.year, date.month);
+
+            return GetDifferenceInDays(date, date2, true);
+        }
+
+        // Problem 51 : Count the number of days until the end of the year
+        static private int DaysUntilTheEndOfYear(stDate date)
+        {
+            stDate date2;
+            date2.year = date.year;
+            date2.month = 12;
+            date2.day = 31;
+
+            return GetDifferenceInDays(date, date2, true);
+        }
+
+
+
+
+
     }
 }
