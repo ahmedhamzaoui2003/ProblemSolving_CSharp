@@ -756,6 +756,21 @@ namespace ProblemSolving_CSharp
             return GetDifferenceInDays(date, date2, true);
         }
 
+        // Problem 52 : Count the number of actual vacation day : 
+        static private int NumberOfVacationDays(stDate VacationStart, stDate VacationEnd)
+        {
+            int NumberOfVacationDays = 0;
+            while (IsDate1BeforeThanDate2(VacationStart, VacationEnd))
+            {
+                if (IsBusinessDay(VacationStart))
+                    NumberOfVacationDays++;
+
+                VacationStart = IncreaseDateByOneDay(VacationStart);
+            }
+            return NumberOfVacationDays;
+        }
+
+
 
 
 
