@@ -789,6 +789,24 @@ namespace ProblemSolving_CSharp
         }
 
 
+        // Problem 57 : Compare two dates :
+
+        private enum enCompareDate
+        {
+            Before = -1,
+            Equal = 0,
+            After = 1
+        }
+        static private enCompareDate CompareTwoDates(stDate date1, stDate date2)
+        {
+            if (IsDate1BeforeThanDate2(date1, date2))
+                return enCompareDate.Before;
+            else if (IsDate1EqualsDate2(date1, date2))
+                return enCompareDate.Equal;
+
+            return enCompareDate.After;
+        }
+
 
     }
 }
