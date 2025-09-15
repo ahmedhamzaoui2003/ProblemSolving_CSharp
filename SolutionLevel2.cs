@@ -348,17 +348,16 @@ namespace ProblemSolving_CSharp
         }
 
         // Problem 16 : Difference between two dates in days
-        static private int DifferenceBetweenTwoDates(stDate date1, stDate date2, int IncludeEndDay = 0)
+        static private int DifferenceBetweenTwoDates(stDate date1, stDate date2, bool IncludeEndDay = false)
         {
-            int DiffInDays = 0;
-            while (true)
+            int Days = 0;
+            while (IsDate1BeforeThanDate2(date1, date2))
             {
-                if (IsDate1EqualsDate2(date1, date2))
-                    return DiffInDays + IncludeEndDay;
-
+                Days++;
                 date1 = IncreaseDateByOneDay(date1);
-                DiffInDays++;
             }
+            return IncludeEndDay ? ++Days : Days;
+
         }
 
 
@@ -819,6 +818,11 @@ namespace ProblemSolving_CSharp
             return !(CompareTwoDates(p1.EndDate, p2.StartDate) == enCompareDate.Before || CompareTwoDates(p2.EndDate, p1.StartDate) == enCompareDate.Before);
         }
 
+        // Problem 59 : Calculate the period length in days :
+        static private int CalculatePeriodLength(stPeriod p, bool IncludeEndDate = false)
+        {
+            return DifferenceBetweenTwoDates(p.StartDate, p.EndDate, IncludeEndDate);
+        }
 
     }
 }
