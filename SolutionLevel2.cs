@@ -824,5 +824,12 @@ namespace ProblemSolving_CSharp
             return DifferenceBetweenTwoDates(p.StartDate, p.EndDate, IncludeEndDate);
         }
 
+        // Problem 60 : Is date within period :
+
+        static bool IsDateWithinPeriod(stPeriod p, stDate date)
+        {
+            return !(CompareTwoDates(date, p.StartDate) == enCompareDate.Before || CompareTwoDates(date, p.EndDate) == enCompareDate.After);
+        }
+
     }
 }
