@@ -807,6 +807,18 @@ namespace ProblemSolving_CSharp
             return enCompareDate.After;
         }
 
+        // Problem 58 : is overalp periods ? 
+
+        private struct stPeriod
+        {
+            public stDate StartDate;
+            public stDate EndDate;
+        }
+        static private bool IsTwoPeriodsOverlapped(stPeriod p1, stPeriod p2)
+        {
+            return !(CompareTwoDates(p1.EndDate, p2.StartDate) == enCompareDate.Before || CompareTwoDates(p2.EndDate, p1.StartDate) == enCompareDate.Before);
+        }
+
 
     }
 }
