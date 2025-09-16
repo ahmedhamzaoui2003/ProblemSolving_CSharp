@@ -831,5 +831,31 @@ namespace ProblemSolving_CSharp
             return !(CompareTwoDates(date, p.StartDate) == enCompareDate.Before || CompareTwoDates(date, p.EndDate) == enCompareDate.After);
         }
 
+        // Problem 61 : Count overlap days :
+        static int CountOverlapDays(stPeriod p1, stPeriod p2)
+        {
+            if (!IsTwoPeriodsOverlapped(p1, p2))
+                return 0;
+
+            if (IsDateWithinPeriod(p1, p2.StartDate) && IsDateWithinPeriod(p1, p2.EndDate))
+                return CalculatePeriodLength(p2);
+
+
+            if (IsDateWithinPeriod(p2, p1.StartDate) && IsDateWithinPeriod(p2, p1.EndDate))
+                return CalculatePeriodLength(p1);
+
+            if (IsDateWithinPeriod(p1, p2.StartDate) && IsDateWithinPeriod(p2, p1.EndDate))
+                return DifferenceBetweenTwoDates(p2.StartDate, p1.EndDate);
+
+            else if (IsDateWithinPeriod(p2, p1.StartDate) && IsDateWithinPeriod(p1, p2.EndDate))
+                return DifferenceBetweenTwoDates(p1.StartDate, p2.EndDate);
+
+            else return 1;
+
+        }
+
+
+
     }
+
 }
