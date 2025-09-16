@@ -860,6 +860,27 @@ namespace ProblemSolving_CSharp
             return date.day >= 1 && date.day <= NumberOfDaysInMonth(date.year, date.month) && date.month >= 1 && date.month <= 12 && date.year >= 1;
         }
 
+        // Problem 63 : Convert string to date structure : 
+        static private stDate StringToDate(string sDate)
+        {
+
+            stDate date;
+            // using built in function 'Split()' of C# language :
+            string[] dates = sDate.Split('/');
+
+            date.day = Convert.ToInt32(dates[0]);
+            date.month = Convert.ToInt32(dates[1]);
+            date.year = Convert.ToInt32(dates[2]);
+
+            return date;
+        }
+
+        // Problem 64 : Convert date structure to string :
+        static private string DateToString(stDate date)
+        {
+            return date.day + "/" + date.month + "/" + date.year;
+        }
+
     }
 
 }
