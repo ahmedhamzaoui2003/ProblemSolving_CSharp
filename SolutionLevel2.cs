@@ -854,7 +854,11 @@ namespace ProblemSolving_CSharp
 
         }
 
-
+        // Problem 62 : is valid date ? 
+        static private bool IsValidDate(stDate date)
+        {
+            return date.day >= 1 && date.day <= NumberOfDaysInMonth(date.year, date.month) && date.month >= 1 && date.month <= 12 && date.year >= 1;
+        }
 
     }
 
